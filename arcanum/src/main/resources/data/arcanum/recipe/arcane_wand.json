@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "equipment",
+	"pattern": [
+		"  C",
+		" B ",
+		"B  "
+	],
+	"key": {
+		"C": "arcanum:mana_crystal",
+		"B": "minecraft:blaze_rod"
+	},
+	"result": {
+		"id": "arcanum:arcane_wand",
+		"count": 1
+	}
+}

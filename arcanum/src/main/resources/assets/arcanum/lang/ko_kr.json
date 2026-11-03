@@ -1,0 +1,12 @@
+{
+	"itemGroup.arcanum": "아르카눔",
+	"item.arcanum.arcane_wand": "비전의 지팡이",
+	"item.arcanum.mana_crystal": "마나 수정",
+	"spell.arcanum.arcane_bolt": "비전 화살",
+	"spell.arcanum.frost_nova": "서리 폭발",
+	"spell.arcanum.blink": "점멸",
+	"spell.arcanum.radiant_heal": "찬란한 치유",
+	"message.arcanum.no_mana": "마나가 부족합니다!",
+	"message.arcanum.blocked": "길이 막혀 있습니다!",
+	"message.arcanum.mana_full": "마나가 이미 가득 찼습니다."
+}
