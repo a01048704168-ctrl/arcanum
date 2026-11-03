@@ -2,7 +2,7 @@ package com.arcanum;
 
 import java.util.function.Function;
 
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -52,7 +52,7 @@ public final class ModItems {
 		Registry.register(
 			BuiltInRegistries.CREATIVE_MODE_TAB,
 			TAB_KEY,
-			FabricItemGroup.builder()
+			FabricCreativeModeTab.builder()
 				.title(Component.translatable("itemGroup." + ArcanumMod.MOD_ID))
 				.icon(() -> new ItemStack(ARCANE_WAND))
 				.displayItems((parameters, output) -> {

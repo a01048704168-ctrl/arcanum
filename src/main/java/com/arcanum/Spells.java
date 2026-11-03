@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -71,7 +72,7 @@ final class Spells {
 
 		if (target != null) {
 			target.hurtServer(level, level.damageSources().indirectMagic(player, player), 8.0F);
-			target.knockback(0.5, -look.x, -look.z);
+			target.push(look.x * 0.5, 0.2, look.z * 0.5);
 		}
 
 		sound(level, player.blockPosition(), SoundEvents.EVOKER_CAST_SPELL, 1.0F, 1.5F);
@@ -166,7 +167,7 @@ final class Spells {
 		}
 
 		for (LivingEntity entity : level.getEntitiesOfClass(LivingEntity.class, area, e -> validTarget(player, e))) {
-			if (entity.distanceTo(player) <= radius && entity.getType().is(EntityTypeTags.UNDEAD)) {
+			if (entity.distanceTo(player) <= radius && isUndead(entity)) {
 				entity.hurtServer(level, level.damageSources().indirectMagic(player, player), 10.0F);
 				burst(level, ParticleTypes.END_ROD, entity.position().add(0, 1.0, 0), 10, 0.3, 0.1);
 			}
@@ -199,6 +200,10 @@ final class Spells {
 			return false;
 		}
 		return !(entity instanceof TamableAnimal pet && pet.isOwnedBy(caster));
+	}
+
+	static boolean isUndead(LivingEntity entity) {
+		return BuiltInRegistries.ENTITY_TYPE.wrapAsHolder(entity.getType()).is(EntityTypeTags.UNDEAD);
 	}
 
 	static void burst(ServerLevel level, ParticleOptions type, Vec3 pos, int count, double spread, double speed) {
