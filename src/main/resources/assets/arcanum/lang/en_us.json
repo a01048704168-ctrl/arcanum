@@ -1,0 +1,12 @@
+{
+	"itemGroup.arcanum": "Arcanum",
+	"item.arcanum.arcane_wand": "Arcane Wand",
+	"item.arcanum.mana_crystal": "Mana Crystal",
+	"spell.arcanum.arcane_bolt": "Arcane Bolt",
+	"spell.arcanum.frost_nova": "Frost Nova",
+	"spell.arcanum.blink": "Blink",
+	"spell.arcanum.radiant_heal": "Radiant Heal",
+	"message.arcanum.no_mana": "Not enough mana!",
+	"message.arcanum.blocked": "The path is blocked!",
+	"message.arcanum.mana_full": "Your mana is already full."
+}
